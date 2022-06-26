@@ -7,7 +7,7 @@ namespace AddressBookSystem
         public static void Main(string[] args)
         {
             AddressBookRepo getMethod = new AddressBookRepo();
-            Console.WriteLine("1.Add Data\n2.Read Data\n3.Update Data\n4.Delete Data\nEnter a Number");
+            Console.WriteLine("1.Add Data\n2.Read Data\n3.Update Data\n4.Delete the Data\nEnter a Number");
             int userInput = Convert.ToInt32(Console.ReadLine());
 
             switch (userInput)

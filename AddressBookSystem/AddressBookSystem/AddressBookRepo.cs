@@ -134,7 +134,7 @@ namespace AddressBookSystem
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
-                    Console.WriteLine("Data Deleted Successfully");
+                    Console.WriteLine("Data Deleted Successfully....");
                 }
             }
             catch (Exception ex)
