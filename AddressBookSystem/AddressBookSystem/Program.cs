@@ -7,7 +7,7 @@ namespace AddressBookSystem
         public static void Main(string[] args)
         {
             AddressBookRepo getMethod = new AddressBookRepo();
-            Console.WriteLine("1.Add Data\n2.Read Data\nEnter a Number");
+            Console.WriteLine("Enter 1 to Add Data\n2 to Read Data\nEnter a Number");
             int userInput = Convert.ToInt32(Console.ReadLine());
 
             switch (userInput)
@@ -39,6 +39,11 @@ namespace AddressBookSystem
                 case 2:
                     {
                         getMethod.ReadData();
+                        break;
+                    }
+                case 3:
+                    {
+                        getMethod.UpdateTable();
                         break;
                     }
                 default:
