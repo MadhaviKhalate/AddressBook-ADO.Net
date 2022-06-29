@@ -146,5 +146,19 @@ namespace AddressBookSystem
                 connection.Close();
             }
         }
+        public void AddMultipleContacts(List<AddressBook_Model> data)
+        {
+            data.ForEach(details =>
+            {
+                Thread thread = new Thread(() =>
+                {
+                    Console.WriteLine("Thread Start Time: " + DateTime.Now);
+                    this.AddData(details);
+                    Console.WriteLine("Contact Added: " + details.firstName);
+                    Console.WriteLine("Thread End Time: " + DateTime.Now);
+                });
+                thread.Start();
+            });
+        }
     }
 }
