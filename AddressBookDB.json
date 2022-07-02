@@ -1,0 +1,76 @@
+{
+  "family": [
+    {
+      "id": 1,
+      "firstName": "Madhavi",
+      "lastName": "Khalate",
+      "address": "11A",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "zipCode": "654321",
+      "phone": "9807654321",
+      "email": "madhavi@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Poonam",
+      "lastName": "Ghadge",
+      "address": "12C",
+      "city": "Barammti",
+      "state": "Maharashtra",
+      "zipCode": 654321,
+      "phone": 8970645231,
+      "email": "poonam@gmail.com",
+      "type": null
+    },
+    {
+      "id": 3,
+      "firstName": "Ankita",
+      "lastName": "Bhosale",
+      "address": "13A",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zipCode": 654321,
+      "phone": 7890654321,
+      "email": "ankita@gmail.com",
+      "type": null
+    },
+    {
+      "id": 4,
+      "firstName": "Sukanya",
+      "lastName": "Sonar",
+      "address": "14A",
+      "city": "Baramati",
+      "state": "Maharashtra",
+      "zipCode": 654321,
+      "phone": 6789045123,
+      "email": "sukanya@gmail.com",
+      "type": null
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "firstName": "Amit",
+      "lastName": "Khalate",
+      "address": "12B",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "zipCode": "645321",
+      "phone": "8907654321",
+      "email": "amit@gamil.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Sagar",
+      "lastName": "sonar",
+      "address": "13A",
+      "city": "Kolhapur",
+      "state": "Maharshtra",
+      "zipCode": 654321,
+      "phone": 7890654321,
+      "email": "sagar@gmail.com",
+      "type": null
+    }
+  ]
+}
