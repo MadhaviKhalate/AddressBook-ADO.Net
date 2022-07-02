@@ -63,5 +63,29 @@ namespace RestSharp_Testing
                 Console.WriteLine(response.Content);
             });
         }
+        [TestMethod]
+        public void OnUpdatingAddressBook_ShouldUpdateOnJsonServer()
+        {
+            client = new RestClient("http://localhost:5000");
+            RestRequest request = new RestRequest("/friends/3", Method.Put);
+            AddressBook_Model body = new AddressBook_Model
+            {
+                firstName = "Sonam",
+                lastName = "Anapat",
+                address = "15A",
+                city = "Malegaon",
+                state = "Maharashtra",
+                zipCode = 654321,
+                phone = 1234567890,
+                email = "sonam@gmail.com"
+            };
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            RestResponse response = client.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            AddressBook_Model data = JsonConvert.DeserializeObject<AddressBook_Model>(response.Content);
+            Assert.AreEqual("Sonam", data.firstName);
+            Assert.AreEqual(1234567890, data.phone);
+            Console.WriteLine(response.Content);
+        }
     }
 }
