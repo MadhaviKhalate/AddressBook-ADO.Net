@@ -25,5 +25,43 @@ namespace RestSharp_Testing
                     data.address, data.city, data.state, data.zipCode, data.phone, data.email);
             }
         }
+        [TestMethod]
+        public void OnPostingAddressDetails_SholudAddToJsonServer()
+        {
+            client = new RestClient("http://localhost:5000");
+            List<AddressBook_Model> list = new List<AddressBook_Model>();
+            list.Add(new AddressBook_Model
+            {
+                firstName = "Pranjal",
+                lastName = "Dhumal",
+                address = "13A",
+                city = "Pune",
+                state = "Maharashtra",
+                zipCode = 654321,
+                phone = 7890654321,
+                email = "pranjal@gmail.com"
+            });
+            list.Add(new AddressBook_Model
+            {
+                firstName = "Sonal",
+                lastName = "Khutale",
+                address = "15A",
+                city = "Malegaon",
+                state = "Maharashtra",
+                zipCode = 654321,
+                phone = 6789045123,
+                email = "sonal@gmail.com"
+            });
+            list.ForEach(body =>
+            {
+                RestRequest request = new RestRequest("/friends", Method.Post);
+                request.AddParameter("application/json", body, ParameterType.RequestBody);
+                RestResponse response = client.Execute(request);
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+                AddressBook_Model data = JsonConvert.DeserializeObject<AddressBook_Model>(response.Content);
+                Assert.AreEqual(body.firstName, data.firstName);
+                Console.WriteLine(response.Content);
+            });
+        }
     }
 }
